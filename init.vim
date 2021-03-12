@@ -15,4 +15,5 @@ source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/functions.vim
 
 lua require'plug-colorizer'
+lua require'plug-nvim-toggleterm'
 

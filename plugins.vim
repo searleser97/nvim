@@ -28,5 +28,6 @@ Plug 'mhinz/vim-signify'
 Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
 Plug 'brooth/far.vim'
+Plug 'akinsho/nvim-toggleterm.lua'
 
 call plug#end()

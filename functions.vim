@@ -18,3 +18,4 @@ function TurnOffCaps()
 endfunction
 
 au InsertLeave * call TurnOffCaps()
+

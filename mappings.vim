@@ -37,3 +37,4 @@ map <leader>rn :<C-u>ReplaceWordsInSelection
 map <c-l> :bn<CR>
 " cycle through buffers (right to left) with ctrl + h
 map <c-h> :bp<CR>
+
