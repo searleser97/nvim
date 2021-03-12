@@ -27,7 +27,7 @@ map <C-_> <Plug>NERDCommenterToggle
 " comments in-line with ctrl+\
 map <C-\> <Plug>NERDCommenterComment
 " enables clangformat with F9 for supported files
-autocmd FileType c,cpp,objc,java,js map <F9> :ClangFormat<CR>
+"autocmd FileType c,cpp,objc,java,js map <F9> :ClangFormat<CR>
 :command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
 map <F3> :<C-u>ReplaceWords
 " rename exact words within selection with \+r+n
@@ -37,4 +37,6 @@ map <leader>rn :<C-u>ReplaceWordsInSelection
 map <c-l> :bn<CR>
 " cycle through buffers (right to left) with ctrl + h
 map <c-h> :bp<CR>
+" open minimap with ctrl+m
+map <c-m> :MinimapToggle<CR>
 

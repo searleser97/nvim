@@ -29,3 +29,5 @@ set guicursor+=a:blinkon0
 " Disable automatic comment insertion
 autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
 filetype plugin on
+
+set sessionoptions=buffers,curdir,folds,help,tabpages,winsize

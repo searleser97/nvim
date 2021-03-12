@@ -196,8 +196,8 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 
-nmap <space>e :CocCommand explorer<CR>
-nmap <space>f :CocCommand explorer --preset floating<CR>
+nmap <c-e> :CocCommand explorer<CR>
+nmap <c-f> :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile

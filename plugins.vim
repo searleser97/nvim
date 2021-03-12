@@ -29,5 +29,6 @@ Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
 Plug 'brooth/far.vim'
 Plug 'akinsho/nvim-toggleterm.lua'
+Plug 'wfxr/minimap.vim'
 
 call plug#end()

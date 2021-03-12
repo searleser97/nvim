@@ -4,6 +4,7 @@ source $HOME/.config/nvim/coc-extensions.vim
 source $HOME/.config/nvim/rainbow.vim
 source $HOME/.config/nvim/startify.vim
 source $HOME/.config/nvim/quick-scope.vim
+source $HOME/.config/nvim/minimap.vim
 
 " themes go after plugins
 source $HOME/.config/nvim/themes/onedark.vim
