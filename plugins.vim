@@ -30,5 +30,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'brooth/far.vim'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'wfxr/minimap.vim'
+Plug 'adelarsq/vim-matchit'
 
 call plug#end()
