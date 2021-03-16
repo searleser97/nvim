@@ -1,3 +1,4 @@
+
 function FReplaceWordsInSelection(...)
   if a:0 == 2
     execute '%s/\%V\<' . a:1 . '\>/' . a:2 . '/gc'
