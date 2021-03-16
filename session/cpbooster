@@ -9,11 +9,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +34 website/src/css/custom.css
-badd +73 website/src/pages/styles.module.css
+badd +74 website/src/pages/styles.module.css
+badd +1 website/src/pages/index.js
 badd +0 website/src/pages/index.js
+badd +0 package.json
 argglobal
 %argdel
-edit website/src/pages/styles.module.css
+edit package.json
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -23,7 +25,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt website/src/pages/index.js
+balt website/src/pages/styles.module.css
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -34,12 +36,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 73 - ((36 * winheight(0) + 23) / 47)
+let s:l = 25 - ((5 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 73
-normal! 0
+keepjumps 25
+normal! 037|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

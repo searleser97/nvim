@@ -27,7 +27,9 @@ set autowriteall
 " disable all blinkin in gvim
 set guicursor+=a:blinkon0
 " Disable automatic comment insertion
-autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
+au BufEnter * set fo-=c fo-=r fo-=o
+"autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
+
 filetype plugin on
 
 set sessionoptions=buffers,curdir,folds,help,tabpages,winsize

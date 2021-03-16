@@ -1,14 +1,14 @@
 let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_lists = [
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          "\ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'bookmarks',     'header': ['   Bookmarks']            },
-          \ { 'type': 'files',       'header': ['   Files '] },
-          \ { 'type': 'dir', 'header': ['   Current Directory '.getcwd()]      },
+          "\ { 'type': 'files',       'header': ['   Files '] },
+          "\ { 'type': 'dir', 'header': ['   Current Directory '.getcwd()]      },
           \ ]
 
 let g:startify_bookmarks = [
             \ '~/Projects/cpbooster',
-            \ '~/Projects/competitive-programming-reference',
+            "\ '~/Projects/competitive-programming-reference',
             \ ]
 
 let g:startify_session_delete_buffers = 1
