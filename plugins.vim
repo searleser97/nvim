@@ -29,7 +29,10 @@ Plug 'unblevable/quick-scope'
 Plug 'justinmk/vim-sneak'
 Plug 'brooth/far.vim'
 Plug 'akinsho/nvim-toggleterm.lua'
-Plug 'wfxr/minimap.vim'
+"Plug 'wfxr/minimap.vim'
 Plug 'adelarsq/vim-matchit'
+Plug 'Yggdroot/indentLine'
+Plug 'searleser97/cpbooster'
+Plug 'airblade/vim-rooter'
 
 call plug#end()

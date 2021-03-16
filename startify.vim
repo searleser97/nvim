@@ -3,7 +3,7 @@ let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'bookmarks',     'header': ['   Bookmarks']            },
           \ { 'type': 'files',       'header': ['   Files '] },
-          \ { 'type': 'dir', 'header': ['   Current Directory '. getcwd()]      },
+          \ { 'type': 'dir', 'header': ['   Current Directory '.getcwd()]      },
           \ ]
 
 let g:startify_bookmarks = [

@@ -3,17 +3,14 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Projects/cpbooster
+cd ~/Projects/cpbooster/website
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +34 website/src/css/custom.css
-badd +73 website/src/pages/styles.module.css
-badd +0 website/src/pages/index.js
+badd +132 src/pages/index.js
 argglobal
 %argdel
-edit website/src/pages/styles.module.css
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -22,24 +19,7 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-argglobal
-balt website/src/pages/index.js
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 73 - ((36 * winheight(0) + 23) / 47)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 73
-normal! 0
+if exists(':tcd') == 2 | tcd ~/Projects/cpbooster/website | endif
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
