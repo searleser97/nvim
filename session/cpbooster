@@ -13,24 +13,15 @@ badd +74 website/src/pages/styles.module.css
 badd +1 website/src/pages/index.js
 badd +25 package.json
 badd +23 src/Init/Init.ts
-badd +54 src/Config/Config.ts
-badd +60 src/index.ts
+badd +79 src/Config/Config.ts
+badd +28 src/index.ts
 badd +20 src/Serve/TerminalCommandBuilder.ts
-badd +94 src/Create/SourceFileCreator.ts
-badd +11 FAR\ 2
-badd +41 ~/Projects/cpbooster/farignore
+badd +24 src/Create/SourceFileCreator.ts
+badd +0 FAR\ 3
 argglobal
 %argdel
-edit ~/Projects/cpbooster/farignore
+edit src/Create/SourceFileCreator.ts
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -38,9 +29,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
 argglobal
-balt FAR\ 2
+balt src/Create/FAR\ 1
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -51,58 +41,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 49 - ((30 * winheight(0) + 23) / 47)
+let s:l = 76 - ((19 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 49
+keepjumps 76
 normal! 0
-wincmd w
-argglobal
-if bufexists("FAR\ 2") | buffer FAR\ 2 | else | edit FAR\ 2 | endif
-if &buftype ==# 'terminal'
-  silent file FAR\ 2
-endif
-balt \[coc-explorer]-1
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 11 - ((1 * winheight(0) + 17) / 35)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 11
-normal! 057|
-wincmd w
-argglobal
-if bufexists("node_modules/typescript/lib/lib.webworker.d.ts") | buffer node_modules/typescript/lib/lib.webworker.d.ts | else | edit node_modules/typescript/lib/lib.webworker.d.ts | endif
-if &buftype ==# 'terminal'
-  silent file node_modules/typescript/lib/lib.webworker.d.ts
-endif
-balt FAR\ 2
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 784 - ((7 * winheight(0) + 5) / 11)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 784
-normal! 057|
-wincmd w
-wincmd =
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

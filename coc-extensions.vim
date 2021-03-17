@@ -7,4 +7,5 @@ let g:coc_global_extensions = ['coc-prettier',
       \ 'coc-css',
       \ 'coc-clangd',
       \ 'coc-lua',
+      \ 'coc-texlab',
       \ ]

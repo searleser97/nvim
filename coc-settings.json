@@ -21,5 +21,6 @@
     "ma": "addFile",
     "mA": "addDirectory"
   },
-  "coc.source.emoji.filetypes": ["markdown", "typescript", "cpp", "javascript", "javascriptreact", "typescriptreact"]
+  "coc.source.emoji.filetypes": ["markdown", "typescript", "cpp", "javascript", "javascriptreact", "typescriptreact"],
+  "texlab.path": "~/ProgramFiles/TextLab/texlab"
 }
