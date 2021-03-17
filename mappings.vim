@@ -33,8 +33,8 @@ map <F3> :<C-u>ReplaceWords
 " rename exact words within selection with \+r+n
 :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
 map <leader>rn :<C-u>ReplaceWordsInSelection
-" cycle through buffers (left to right) with ctrl + l
-map <c-l> :bn<CR>
+" cycle through buffers (left to right) with <tab>
+noremap <tab> :bn<CR>
 " cycle through buffers (right to left) with ctrl + h
 map <c-h> :bp<CR>
 

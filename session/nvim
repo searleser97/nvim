@@ -9,13 +9,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +3 init.vim
-badd +33 ~/.config/nvim/plugins.vim
-badd +1 ~/.config/nvim/coc.vim
-badd +1 ~/.config/nvim/coc-settings.json
-badd +10 ~/.config/nvim/coc-extensions.vim
+badd +36 ~/.config/nvim/mappings.vim
 argglobal
 %argdel
-edit ~/.config/nvim/plugins.vim
+edit ~/.config/nvim/mappings.vim
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -25,7 +22,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.config/nvim/coc-extensions.vim
+balt init.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -36,12 +33,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 39 - ((31 * winheight(0) + 23) / 47)
+let s:l = 39 - ((38 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 39
-normal! 0
+normal! 017|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
