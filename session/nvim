@@ -9,9 +9,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +3 init.vim
-badd +41 mappings.vim
-badd +3 ~/.config/nvim/themes/onedark.vim
-badd +21 ~/.config/nvim/functions.vim
+badd +45 mappings.vim
+badd +3 themes/onedark.vim
+badd +21 functions.vim
 argglobal
 %argdel
 edit mappings.vim
@@ -35,12 +35,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 44 - ((43 * winheight(0) + 23) / 47)
+let s:l = 45 - ((40 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 44
-normal! 023|
+keepjumps 45
+normal! 019|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
