@@ -35,3 +35,8 @@ au BufEnter * set fo-=c fo-=r fo-=o
 filetype plugin on
 
 set sessionoptions=buffers,curdir,folds,help,tabpages,winsize
+
+augroup SAVING
+    autocmd!
+    autocmd BufWritePost * echo strftime('%c')
+augroup END

@@ -20,3 +20,8 @@ endfunction
 
 au InsertLeave * call TurnOffCaps()
 
+function MyF( ... )
+  if (has("gui_running"))
+    echo "hola que chow"
+  endif
+endfunction

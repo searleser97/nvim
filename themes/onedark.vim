@@ -1,4 +1,4 @@
-if (has("autocmd") && !has("gui_running"))
+if (has("autocmd") && !exists('g:GuiLoaded'))
   augroup colorset
     autocmd!
     let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }

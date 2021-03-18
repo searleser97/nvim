@@ -36,5 +36,6 @@ Plug 'searleser97/cpbooster.vim'
 Plug 'airblade/vim-rooter'
 Plug 'rhysd/vim-grammarous'
 Plug 'haya14busa/is.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()

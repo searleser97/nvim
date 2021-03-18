@@ -3,26 +3,15 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Projects/cpbooster
+cd ~/Projects/TT1
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +34 website/src/css/custom.css
-badd +74 website/src/pages/styles.module.css
-badd +1 website/src/pages/index.js
-badd +25 package.json
-badd +23 src/Init/Init.ts
-badd +79 src/Config/Config.ts
-badd +28 src/index.ts
-badd +20 src/Serve/TerminalCommandBuilder.ts
-badd +76 src/Create/SourceFileCreator.ts
-badd +1 FAR\ 3
-badd +0 src/Create/FAR\ 1
-badd +0 ~/Projects/cpbooster/src/Submit/OnlineJudgeFactory/Codeforces.ts
+badd +1 Documento/MarcoTeorico/NLP/nlp.tex
+badd +1 term://~/Projects/TT1//2603:/usr/bin/zsh;\#toggleterm\#1
 argglobal
 %argdel
-edit ~/Projects/cpbooster/src/Submit/OnlineJudgeFactory/Codeforces.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -31,24 +20,6 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-argglobal
-balt src/Create/SourceFileCreator.ts
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 39 - ((3 * winheight(0) + 10) / 21)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 39
-normal! 044|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

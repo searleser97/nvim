@@ -35,6 +35,17 @@ map <F3> :<C-u>ReplaceWords
 map <leader>rn :<C-u>ReplaceWordsInSelection
 " cycle through buffers (left to right) with <tab>
 noremap <tab> :bn<CR>
+" cycle through buffers (right to left) with ctrl + l
+map <A-l> :bn<CR>
 " cycle through buffers (right to left) with ctrl + h
-map <c-h> :bp<CR>
+map <A-h> :bp<CR>
+
+" go to right window with ctrl + l
+map <C-l> :wincmd l<CR>
+" go to left window with ctrl + h
+map <C-l> :wincmd h<CR>
+" go to up window with ctrl + k
+map <C-l> :wincmd k<CR>
+" go to down window with ctrl + j
+map <C-l> :wincmd j<CR>
 
