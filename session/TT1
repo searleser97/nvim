@@ -14,10 +14,6 @@ argglobal
 %argdel
 edit Documento/MarcoTeorico/NLP/nlp.tex
 set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -25,8 +21,6 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 36 + 25) / 51)
-exe '2resize ' . ((&lines * 10 + 25) / 51)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -38,37 +32,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((24 * winheight(0) + 18) / 36)
+let s:l = 27 - ((26 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
+keepjumps 27
 normal! 090|
-wincmd w
-argglobal
-if bufexists("term://~/Projects/TT1//17279:/usr/bin/zsh;\#toggleterm\#1") | buffer term://~/Projects/TT1//17279:/usr/bin/zsh;\#toggleterm\#1 | else | edit term://~/Projects/TT1//17279:/usr/bin/zsh;\#toggleterm\#1 | endif
-if &buftype ==# 'terminal'
-  silent file term://~/Projects/TT1//17279:/usr/bin/zsh;\#toggleterm\#1
-endif
-balt Documento/MarcoTeorico/NLP/nlp.tex
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 10 - ((9 * winheight(0) + 5) / 10)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 10
-normal! 0
-lcd ~/Projects/TT1
-wincmd w
-exe '1resize ' . ((&lines * 36 + 25) / 51)
-exe '2resize ' . ((&lines * 10 + 25) / 51)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

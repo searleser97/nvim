@@ -39,7 +39,6 @@ noremap <tab> :bn<CR>
 map <A-l> :bn<CR>
 " cycle through buffers (right to left) with ctrl + h
 map <A-h> :bp<CR>
-
 " go to right window with ctrl + l
 map <C-l> :wincmd l<CR>
 " go to left window with ctrl + h
@@ -49,3 +48,6 @@ map <C-k> :wincmd k<CR>
 " go to down window with ctrl + j
 map <C-j> :wincmd j<CR>
 
+map gf <Plug>(grammarous-fixit)
+map gn <Plug>(grammarous-move-to-next-error)
+map gp <Plug>(grammarous-move-to-previous-error)
