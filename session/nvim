@@ -10,10 +10,11 @@ endif
 set shortmess=aoO
 badd +6 init.vim
 badd +27 plugins.vim
-badd +1 themes/airline.vim
+badd +4 themes/airline.vim
+badd +0 coc-extensions.vim
 argglobal
 %argdel
-edit themes/airline.vim
+edit coc-extensions.vim
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -23,7 +24,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt plugins.vim
+balt themes/airline.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -34,12 +35,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 23) / 47)
+let s:l = 11 - ((10 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 0
+keepjumps 11
+normal! 017|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
