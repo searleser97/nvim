@@ -35,9 +35,9 @@ map <F3> :<C-u>ReplaceWords
 map <leader>rn :<C-u>ReplaceWordsInSelection
 " cycle through buffers (left to right) with <tab>
 noremap <tab> :bn<CR>
-" cycle through buffers (right to left) with ctrl + l
+" cycle through buffers (right to left) with Alt + l
 map <A-l> :bn<CR>
-" cycle through buffers (right to left) with ctrl + h
+" cycle through buffers (right to left) with Alt + h
 map <A-h> :bp<CR>
 " go to right window with ctrl + l
 map <C-l> :wincmd l<CR>
@@ -51,3 +51,6 @@ map <C-j> :wincmd j<CR>
 map gf <Plug>(grammarous-fixit)
 map gn <Plug>(grammarous-move-to-next-error)
 map gp <Plug>(grammarous-move-to-previous-error)
+
+" close current buffer with Alt + W
+map <A-w> :bd<CR>
