@@ -19,7 +19,7 @@ map <C-y>  ggVG<C-c><C-o><C-o>zz:echo "Contents Copied to clipboard"<CR>
 " indents whole file with F8
 map <F8> gg=G``zz
 " opens fzf file search with ctrl+p
-map <C-p> :Files<CR>
+map <C-f> :Files<CR>
 " opens fzf file search in competitive programming reference directory with F7
 map <F7> :Files ~/Projects/competitive-programming-reference/Reference<CR>
 " toggles comments with ctrl+/

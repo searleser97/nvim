@@ -10,7 +10,7 @@ endif
 set shortmess=aoO
 badd +116 README.md
 badd +214 src/index.ts
-badd +111 src/Test/TesterFactory/Tester.ts
+badd +1 src/Test/TesterFactory/Tester.ts
 badd +121 src/Util.ts
 argglobal
 %argdel
@@ -27,7 +27,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-wincmd =
+exe '1resize ' . ((&lines * 36 + 25) / 51)
+exe '2resize ' . ((&lines * 10 + 25) / 51)
 argglobal
 balt src/Util.ts
 setlocal fdm=manual
@@ -40,12 +41,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 122 - ((26 * winheight(0) + 18) / 36)
+let s:l = 124 - ((29 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 122
-normal! 050|
+keepjumps 124
+normal! 041|
 wincmd w
 argglobal
 if bufexists("term://~/Projects/cpbooster//33068:/usr/bin/zsh;\#toggleterm\#1") | buffer term://~/Projects/cpbooster//33068:/usr/bin/zsh;\#toggleterm\#1 | else | edit term://~/Projects/cpbooster//33068:/usr/bin/zsh;\#toggleterm\#1 | endif
@@ -61,15 +62,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 153 - ((6 * winheight(0) + 5) / 10)
+let s:l = 10 - ((9 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 153
-normal! 043|
+keepjumps 10
+normal! 0
 lcd ~/Projects/cpbooster
 wincmd w
-wincmd =
+exe '1resize ' . ((&lines * 36 + 25) / 51)
+exe '2resize ' . ((&lines * 10 + 25) / 51)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
