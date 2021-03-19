@@ -37,5 +37,9 @@ Plug 'airblade/vim-rooter'
 Plug 'rhysd/vim-grammarous'
 Plug 'haya14busa/is.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'mhartington/oceanic-next'
 
 call plug#end()

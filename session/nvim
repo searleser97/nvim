@@ -8,13 +8,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +10 init.vim
-badd +53 mappings.vim
-badd +3 themes/onedark.vim
-badd +21 functions.vim
+badd +6 init.vim
+badd +27 plugins.vim
+badd +1 themes/airline.vim
 argglobal
 %argdel
-edit mappings.vim
+edit themes/airline.vim
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -24,7 +23,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt init.vim
+balt plugins.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -35,12 +34,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 53 - ((46 * winheight(0) + 23) / 47)
+let s:l = 3 - ((2 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 53
-normal! 047|
+keepjumps 3
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
