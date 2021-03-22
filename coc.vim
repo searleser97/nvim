@@ -179,13 +179,13 @@ let g:coc_explorer_global_presets = {
 \     'floating-position': 'center-top',
 \     'open-action-strategy': 'sourceWindow',
 \   },
-\   'floatingLeftside': {
+\   'floatingLeftSide': {
 \     'position': 'floating',
 \     'floating-position': 'left-center',
 \     'floating-width': 50,
 \     'open-action-strategy': 'sourceWindow',
 \   },
-\   'floatingRightside': {
+\   'floatingRightSide': {
 \     'position': 'floating',
 \     'floating-position': 'right-center',
 \     'floating-width': 50,
@@ -196,8 +196,7 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 
-nmap <c-e> :CocCommand explorer<CR>
-nmap <c-f> :CocCommand explorer --preset floating<CR>
+nmap <c-e> :CocCommand explorer --preset floatingLeftSide<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile

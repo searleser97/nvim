@@ -12,16 +12,13 @@ function FReplaceWords(...)
 endfunction
 
 function TurnOffCaps()
-    let capsState = matchstr(system('xset -q'), '00: Caps Lock:\s\+\zs\(on\|off\)\ze')
-    if capsState == 'on'
-        silent! execute ':!xdotool key Caps_Lock'
-    endif
+  let capsState = matchstr(system('xset -q'), '00: Caps Lock:\s\+\zs\(on\|off\)\ze')
+  if capsState == 'on'
+    execute '!xdotool key Caps_Lock'
+  endif
 endfunction
 
 au InsertLeave * call TurnOffCaps()
 
-function MyF( ... )
-  if (has("gui_running"))
-    echo "hola que chow"
-  endif
-endfunction
+" makes ctrl-c trigger TurnOffCaps as well
+inoremap <c-c> <ESC>:call TurnOffCaps()<CR>
