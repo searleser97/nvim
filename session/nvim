@@ -10,13 +10,10 @@ endif
 set shortmess=aoO
 badd +13 init.vim
 badd +22 plugins.vim
-badd +1 coc-extensions.vim
-badd +22 mappings.vim
-badd +199 ~/.config/nvim/coc.vim
-badd +1 ~/.config/nvim/indentLine.vim
+badd +24 functions.vim
 argglobal
 %argdel
-edit ~/.config/nvim/coc.vim
+edit functions.vim
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -26,7 +23,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/.config/nvim/indentLine.vim
+balt plugins.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -37,12 +34,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 172 - ((14 * winheight(0) + 23) / 47)
+let s:l = 24 - ((17 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 172
-normal! 04|
+keepjumps 24
+normal! 019|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
