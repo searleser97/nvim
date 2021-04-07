@@ -1,56 +1,58 @@
 " change word to uppercase in insert mode with ctrl+u
-inoremap <C-u> <Esc>gUiW`]a
+inoremap <C-u> <Esc>gUiw`]a
 " adds the ability to undo word by word
 inoremap <Space> <Space><C-g>u
-" prints newlines with ENTER key
-" map <Enter> i<Enter><Esc> l
-" creates a "space" when I click the space key
-map <Space> i<space><Esc>l
 " Deletes previous chars with Backspace key
 map <Bs> X
-" enables ctrl-c to copy to clipboard
+" copy selected text to clipboard with 'ctrl+c'
 map <C-c> "+y
-" enables ctrl-v to paste from clipboard
+" paste from clipboard with 'ctrl+v'
 map <C-v> "+p
-" loads c++ template with F6
-map <F6> :r ~/Projects/competitive-programming-reference/Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp<CR>
-" copies entire text with ctrl+y
-map <C-y>  ggVG<C-c><C-o><C-o>zz:echo "Contents Copied to clipboard"<CR>
-" indents whole file with F8
-map <F8> gg=G``zz
-" opens fzf file search with ctrl+p
-map <C-f> :Files<CR>
-" opens fzf file search in competitive programming reference directory with F7
-map <F7> :Files ~/Projects/competitive-programming-reference/Reference<CR>
-" toggles comments with ctrl+/
-map <C-_> <Plug>NERDCommenterToggle
-" comments in-line with ctrl+\
-map <C-\> <Plug>NERDCommenterComment
-" enables clangformat with F9 for supported files
-"autocmd FileType c,cpp,objc,java,js map <F9> :ClangFormat<CR>
-:command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
-map <F3> :<C-u>ReplaceWords
-" rename exact words within selection with \+r+n
-:command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
-map <leader>rn :<C-u>ReplaceWordsInSelection
+" loads c++ template with space+l+t (Load Template)
+map <space>lt :r ~/Projects/competitive-programming-reference/Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp<CR>
+" copies entire text with space+a
+map <space>a  ggVG<C-c><C-o><C-o>zz:echo "Contents Copied to clipboard"<CR>
+" indents whole file with 'space+i+a' (Indent All)
+map <space>ia gg=G``zz
 " cycle through buffers (left to right) with <tab>
 noremap <tab> :bn<CR>
-" cycle through buffers (right to left) with Alt + l
-map <A-l> :bn<CR>
-" cycle through buffers (right to left) with Alt + h
-map <A-h> :bp<CR>
-" go to right window with ctrl + l
-map <C-l> :wincmd l<CR>
-" go to left window with ctrl + h
-map <C-h> :wincmd h<CR>
-" go to up window with ctrl + k
-map <C-k> :wincmd k<CR>
-" go to down window with ctrl + j
-map <C-j> :wincmd j<CR>
+" cycle through buffers (right to left) with ctrl + l
+map <C-l> :bn<CR>
+" cycle through buffers (left to right) with ctrl + h
+map <C-h> :bp<CR>
+" go to right window with alt + l
+map <A-l> :wincmd l<CR>
+" go to left window with alt + h
+map <A-h> :wincmd h<CR>
+" go to up window with alt + k
+map <A-k> :wincmd k<CR>
+" go to down window with alt + j
+map <A-j> :wincmd j<CR>
+" remap window shortcuts to alt + w instead of ctrl + w
+noremap <A-w> <C-w>
+" close current buffer
+map <C-w> :bd<CR>
+" makes ctrl-c trigger TurnOffCaps()
+inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
+"rename exact words in entire file
+:command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
+map <space>rg :<C-u>ReplaceWords
+"rename exact words within selection
+:command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
+map <space>r :<C-u>ReplaceWordsInSelection
+
+" ========= Plugins Mappings =========
+
+" toggles comments
+map <C-_> <Plug>NERDCommenterToggle
+" comments in-line
+map <C-\> <Plug>NERDCommenterComment
+
+" opens fzf file search
+map <C-f> :Files<CR>
+" opens fzf file search in competitive programming reference directory with
+map <space>ref :Files ~/Projects/competitive-programming-reference/Reference<CR>
 
 map gf <Plug>(grammarous-fixit)
 map gn <Plug>(grammarous-move-to-next-error)
 map gp <Plug>(grammarous-move-to-previous-error)
-
-" close current buffer with Alt + W
-map <A-w> :bd<CR>

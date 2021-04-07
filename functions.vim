@@ -20,5 +20,3 @@ endfunction
 
 au InsertLeave * call TurnOffCaps()
 
-" makes ctrl-c trigger TurnOffCaps as well
-inoremap <c-c> <c-c>:call TurnOffCaps()<CR>

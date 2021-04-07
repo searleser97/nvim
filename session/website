@@ -8,11 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 src/css/custom.css
-badd +21 docs/Debug.mdx
+badd +54 docs/submit.mdx
+badd +117 docs/configuration.mdx
 argglobal
 %argdel
-edit docs/Debug.mdx
+edit docs/configuration.mdx
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -22,7 +22,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt src/css/custom.css
+balt docs/submit.mdx
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -33,13 +33,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 21 - ((20 * winheight(0) + 23) / 47)
+let s:l = 69 - ((0 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 21
-normal! 053|
-lcd ~/Projects/cpbooster/website
+keepjumps 69
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

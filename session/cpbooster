@@ -8,14 +8,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +116 README.md
-badd +214 src/index.ts
-badd +89 src/Clone/CCServer.ts
-badd +73 src/Create/SourceFileCreator.ts
-badd +1 src/Test/TesterFactory/Tester.ts
+badd +45 src/Test/TesterFactory/Tester.ts
+badd +121 src/index.ts
+badd +23 src/Clone/Clone.ts
+badd +53 src/Clone/CCServer.ts
 argglobal
 %argdel
-edit src/Test/TesterFactory/Tester.ts
+edit src/Clone/Clone.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -25,7 +24,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt src/Create/SourceFileCreator.ts
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -36,13 +34,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 181 - ((36 * winheight(0) + 23) / 47)
+let s:l = 24 - ((23 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 181
+keepjumps 24
 normal! 0
-lcd ~/Projects/cpbooster
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
