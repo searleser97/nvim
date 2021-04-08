@@ -39,7 +39,7 @@ inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
 map <space>rg :<C-u>ReplaceWords
 "rename exact words within selection
 :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
-map <space>r :<C-u>ReplaceWordsInSelection
+map <space>rs :<C-u>ReplaceWordsInSelection
 
 " ========= Plugins Mappings =========
 
