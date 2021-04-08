@@ -3,19 +3,15 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.config/nvim
+cd ~/Projects/competitive-programming-reference
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +29 plugins.vim
-badd +6 functions.vim
-badd +65 settings.vim
-badd +54 mappings.vim
-badd +0 coc.vim
+badd +21 Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp
 argglobal
 %argdel
-edit coc.vim
+edit Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -25,7 +21,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt mappings.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -36,12 +31,13 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 85 - ((42 * winheight(0) + 23) / 47)
+let s:l = 21 - ((20 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 85
-normal! 034|
+keepjumps 21
+normal! 0
+lcd ~/Projects/competitive-programming-reference
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
