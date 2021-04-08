@@ -56,3 +56,6 @@ map <space>ref :Files ~/Projects/competitive-programming-reference/Reference<CR>
 map gf <Plug>(grammarous-fixit)
 map gn <Plug>(grammarous-move-to-next-error)
 map gp <Plug>(grammarous-move-to-previous-error)
+
+map <space>f <Plug>Sneak_s
+map <space>F <Plug>Sneak_S
