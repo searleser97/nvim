@@ -12,7 +12,7 @@ badd +29 plugins.vim
 badd +6 functions.vim
 badd +65 settings.vim
 badd +54 mappings.vim
-badd +0 coc.vim
+badd +85 coc.vim
 argglobal
 %argdel
 edit coc.vim

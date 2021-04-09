@@ -8,9 +8,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +90 Documento/MarcoTeorico/NLP/nlp.tex
-badd +1 term://~/Projects/TT1//2603:/usr/bin/zsh;\#toggleterm\#1
-badd +0 \[Grammarous]
+badd +208 Documento/MarcoTeorico/NLP/nlp.tex
+badd +20 main.tex
+badd +20 Documento/MarcoTeorico/introduccion.tex
 argglobal
 %argdel
 edit Documento/MarcoTeorico/NLP/nlp.tex
@@ -23,7 +23,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt \[Grammarous]
+balt Documento/MarcoTeorico/introduccion.tex
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -34,12 +34,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 172 - ((32 * winheight(0) + 23) / 47)
+let s:l = 207 - ((35 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 172
-normal! 029|
+keepjumps 207
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
