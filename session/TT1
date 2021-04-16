@@ -8,12 +8,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +208 Documento/MarcoTeorico/NLP/nlp.tex
-badd +20 main.tex
-badd +20 Documento/MarcoTeorico/introduccion.tex
+badd +28 Documento/EstadoArte/Hibrido/tesisSandra.tex
+badd +90 Documento/MarcoTeorico/NLP/similarity.tex
+badd +36 Documento/MarcoTeorico/introduccion.tex
+badd +220 Documento/MarcoTeorico/NLP/keywordExtraction.tex
 argglobal
 %argdel
-edit Documento/MarcoTeorico/NLP/nlp.tex
+edit Documento/MarcoTeorico/NLP/similarity.tex
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -34,12 +35,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 207 - ((35 * winheight(0) + 23) / 47)
+let s:l = 90 - ((11 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 207
-normal! 0
+keepjumps 90
+normal! 022|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

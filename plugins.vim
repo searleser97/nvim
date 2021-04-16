@@ -41,5 +41,6 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'vigoux/LanguageTool.nvim'
 
 call plug#end()
