@@ -8,7 +8,7 @@
 
 #   LT's base directory
 #
-ltdir=~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.7
+ltdir=~/.config/nvim/autoload/plugged/vim-grammarous/misc/LanguageTool-5.2
 
 #   comment out to use languagetool-commandline
 #
@@ -18,7 +18,7 @@ use_server="--server my"
 #   --> set to xml-b
 #
 output=xml-b
-output=xml
+#output=xml
 
 opts=x
 lang=en-GB

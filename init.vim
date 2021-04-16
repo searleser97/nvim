@@ -7,6 +7,7 @@ source $HOME/.config/nvim/quick-scope.vim
 "source $HOME/.config/nvim/minimap.vim
 source $HOME/.config/nvim/vim-rooter.vim
 source $HOME/.config/nvim/indentLine.vim
+source $HOME/.config/nvim/grammarous.vim
 
 " themes go after plugins
 source $HOME/.config/nvim/themes/onedark.vim
