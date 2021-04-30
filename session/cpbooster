@@ -9,13 +9,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +45 src/Test/TesterFactory/Tester.ts
-badd +121 src/index.ts
-badd +24 src/Clone/Clone.ts
-badd +53 src/Clone/CCServer.ts
-badd +15 package.json
+badd +43 src/Submit/OnlineJudgeFactory/OnlineJudge.ts
 argglobal
 %argdel
-edit package.json
+edit src/Submit/OnlineJudgeFactory/OnlineJudge.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -25,7 +22,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt src/Clone/Clone.ts
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -36,12 +32,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 23) / 47)
+let s:l = 43 - ((23 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
-normal! 03|
+keepjumps 43
+normal! 021|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -28,6 +28,8 @@ set incsearch
 set mouse=a
 " enables nice status bar with lightline plugin
 set laststatus=2
+" disables symbol transforming to unicode in .tex and .md files
+let g:tex_conceal = ""
 " saves buffers before closing them
 set autowriteall
 " disable all blinkin in gvim
