@@ -1,5 +1,5 @@
 " change word to uppercase in insert mode with ctrl+u
-inoremap gu <Esc>gUiw`]a
+inoremap <C-u> <Esc>gUiw`]a
 " adds the ability to undo word by word
 inoremap <Space> <Space><C-g>u
 " Deletes previous chars with Backspace key
