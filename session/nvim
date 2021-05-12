@@ -8,14 +8,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 init.vim
 badd +127 coc.vim
 badd +1 settings.vim
-badd +9 plugins.vim
-badd +3 mappings.vim
+badd +4 ~/.config/nvim/startify.vim
 argglobal
 %argdel
-edit mappings.vim
+edit settings.vim
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -25,7 +23,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt plugins.vim
+balt ~/.config/nvim/startify.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -36,12 +34,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 14) / 29)
+let s:l = 68 - ((43 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 021|
+keepjumps 68
+normal! 028|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
