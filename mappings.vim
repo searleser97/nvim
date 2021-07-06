@@ -7,9 +7,9 @@ inoremap <Space> <Space><C-g>u
 " Deletes previous chars with Backspace key
 map <Bs> X
 " copy selected text to clipboard with 'ctrl+c'
-map <C-c> "+y
+noremap <C-c> "+y
 " paste from clipboard with 'ctrl+v'
-map <C-v> "+p
+noremap <C-v> "+p
 " loads c++ template with space+l+t (Load Template)
 map <space>lt :r ~/Projects/competitive-programming-reference/Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp<CR>
 " copies entire text with space+a
