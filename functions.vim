@@ -35,7 +35,7 @@ function! VSCodeNotifyVisual(cmd, leaveSelection, ...)
     endif
 endfunction
 
-function! ReplaceInFile()
+function! VSCodeReplaceInFile()
     let mode = mode()
     call VSCodeNotifyVisual('editor.action.startFindReplaceAction', 0)
     echo mode
