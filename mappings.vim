@@ -22,7 +22,7 @@ map <space>rs :<C-u>ReplaceWordsInSelection
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-noremap ? <Cmd>call ReplaceInFile()<CR>
+noremap ? <Cmd>call VSCodeReplaceInFile()<CR>
 
 if !exists('g:vscode')
       " loads c++ template with space+l+t (Load Template)
