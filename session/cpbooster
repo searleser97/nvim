@@ -9,11 +9,19 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +45 src/Test/TesterFactory/Tester.ts
-badd +43 src/Submit/OnlineJudgeFactory/OnlineJudge.ts
+badd +48 src/Submit/OnlineJudgeFactory/OnlineJudge.ts
+badd +2 ~/Projects/cpbooster/package.json
+badd +19 ~/Projects/cpbooster/tsconfig.json
+badd +27 ~/Projects/cpbooster/src/index.ts
+badd +32 src/Test/Test.ts
 argglobal
 %argdel
-edit src/Submit/OnlineJudgeFactory/OnlineJudge.ts
+edit ~/Projects/cpbooster/src/index.ts
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -21,7 +29,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '1resize ' . ((&lines * 19 + 16) / 33)
+exe '2resize ' . ((&lines * 9 + 16) / 33)
 argglobal
+balt ~/Projects/cpbooster/tsconfig.json
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -32,12 +43,35 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 43 - ((23 * winheight(0) + 23) / 47)
+let s:l = 26 - ((8 * winheight(0) + 9) / 19)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 43
-normal! 021|
+keepjumps 26
+normal! 043|
+wincmd w
+argglobal
+if bufexists("term://~/Projects/cpbooster//3731:/usr/bin/zsh;\#toggleterm\#1") | buffer term://~/Projects/cpbooster//3731:/usr/bin/zsh;\#toggleterm\#1 | else | edit term://~/Projects/cpbooster//3731:/usr/bin/zsh;\#toggleterm\#1 | endif
+if &buftype ==# 'terminal'
+  silent file term://~/Projects/cpbooster//3731:/usr/bin/zsh;\#toggleterm\#1
+endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 9 - ((8 * winheight(0) + 4) / 9)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 9
+normal! 0
+wincmd w
+exe '1resize ' . ((&lines * 19 + 16) / 33)
+exe '2resize ' . ((&lines * 9 + 16) / 33)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

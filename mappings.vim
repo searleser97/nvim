@@ -1,3 +1,5 @@
+" visual block selection with 'ctrl+b'
+noremap <C-b> <C-v>
 " change word to uppercase in insert mode with ctrl+u
 inoremap <C-u> <Esc>gUiw`]a
 " adds the ability to undo word by word
