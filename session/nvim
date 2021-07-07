@@ -22,6 +22,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt init.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}

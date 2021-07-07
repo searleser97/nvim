@@ -19,9 +19,8 @@ map <space>rg :<C-u>ReplaceWords
 :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
 map <space>rs :<C-u>ReplaceWordsInSelection
 
-" t of teletransport
-map t <Plug>Sneak_s
-map T <Plug>Sneak_S
+map <space>f <Plug>Sneak_s
+map <space>F <Plug>Sneak_S
 
 noremap ? <Cmd>call VSCodeReplaceInFile()<CR>
 
