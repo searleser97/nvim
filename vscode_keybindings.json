@@ -1,0 +1,14 @@
+[
+  {
+    "command": "vscode-neovim.send",
+    "key": "ctrl+c",
+    "when": "editorTextFocus && neovim.mode == visual",
+    "args": "<C-c>"
+  },
+  {
+    "command": "vscode-neovim.send",
+    "key": "ctrl+b",
+    "when": "editorTextFocus && neovim.mode == normal",
+    "args": "<C-b>"
+  }
+]

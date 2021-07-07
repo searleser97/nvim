@@ -63,5 +63,10 @@ if !exists('g:vscode')
       map gf <Plug>(grammarous-fixit)
       map gn <Plug>(grammarous-move-to-next-error)
       map gp <Plug>(grammarous-move-to-previous-error)
+else
+      nnoremap u <Cmd>call VSCodeNotify('undo')<CR>
+      nnoremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
+      nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>
+      nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<CR>
 endif
 

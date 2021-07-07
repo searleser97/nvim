@@ -11,11 +11,12 @@ set shortmess=aoO
 badd +1 settings.vim
 badd +1 mappings.vim
 badd +45 functions.vim
-badd +23 init.vim
-badd +1 plugins.vim
+badd +4 init.vim
+badd +31 plugins.vim
+badd +1 vim-sneak.vim
 argglobal
 %argdel
-edit plugins.vim
+edit mappings.vim
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -36,12 +37,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 40 - ((34 * winheight(0) + 23) / 46)
+let s:l = 70 - ((35 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 40
-normal! 025|
+keepjumps 70
+normal! 019|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
