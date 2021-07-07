@@ -15,8 +15,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'justinmk/vim-sneak'
 Plug 'searleser97/cpbooster.vim'
+Plug 'unblevable/quick-scope'
 
-Plug 'unblevable/quick-scope', Cond(!exists('g:vscode'))
 Plug 'junegunn/fzf', Cond(!exists('g:vscode'), { 'do': { -> fzf#install() } })
 Plug 'junegunn/fzf.vim', Cond(!exists('g:vscode'))
 Plug 'junegunn/rainbow_parentheses.vim', Cond(!exists('g:vscode'))

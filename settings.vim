@@ -65,8 +65,5 @@ let g:terminal_color_1 = '#AB4642'
 let g:terminal_color_2 = '#5b8a3a'
 let g:terminal_color_15 = '#FFFFFF'
 
-let g:sneak#label = 1
 
-highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 
