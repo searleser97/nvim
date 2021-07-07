@@ -1,11 +1,13 @@
 source $HOME/.config/nvim/plugins.vim
 
+source $HOME/.config/nvim/quick-scope.vim
+source $HOME/.config/nvim/vim-sneak.vim
+
 if !exists('g:vscode')
       source $HOME/.config/nvim/coc.vim
       source $HOME/.config/nvim/coc-extensions.vim
       source $HOME/.config/nvim/rainbow.vim
       source $HOME/.config/nvim/startify.vim
-      source $HOME/.config/nvim/quick-scope.vim
       "source $HOME/.config/nvim/minimap.vim
       source $HOME/.config/nvim/vim-rooter.vim
       source $HOME/.config/nvim/indentLine.vim
