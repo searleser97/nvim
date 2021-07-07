@@ -44,5 +44,21 @@
     "key": "ctrl+shift+c",
     "command": "-workbench.action.terminal.copySelection",
     "when": "terminalFocus && terminalTextSelected"
+  },
+  {
+    "key": "shift+alt+w",
+    "command": "workbench.action.closeEditorsInOtherGroups"
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
   }
 ]
