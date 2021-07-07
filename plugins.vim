@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'justinmk/vim-sneak'
 Plug 'searleser97/cpbooster.vim'
 Plug 'unblevable/quick-scope'
+Plug 'adelarsq/vim-matchit'
 
 Plug 'junegunn/fzf', Cond(!exists('g:vscode'), { 'do': { -> fzf#install() } })
 Plug 'junegunn/fzf.vim', Cond(!exists('g:vscode'))
@@ -37,7 +38,6 @@ Plug 'mhinz/vim-signify', Cond(!exists('g:vscode'))
 Plug 'brooth/far.vim', Cond(!exists('g:vscode'))
 Plug 'akinsho/nvim-toggleterm.lua', Cond(!exists('g:vscode'))
 "Plug 'wfxr/minimap.vim'
-Plug 'adelarsq/vim-matchit', Cond(!exists('g:vscode'))
 Plug 'Yggdroot/indentLine', Cond(!exists('g:vscode'))
 Plug 'airblade/vim-rooter', Cond(!exists('g:vscode'))
 Plug 'rhysd/vim-grammarous', Cond(!exists('g:vscode'))
