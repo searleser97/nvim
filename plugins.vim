@@ -17,11 +17,11 @@ Plug 'justinmk/vim-sneak'
 Plug 'searleser97/cpbooster.vim'
 
 Plug 'unblevable/quick-scope', Cond(!exists('g:vscode'))
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }, Cond(!exists('g:vscode'))
+Plug 'junegunn/fzf', Cond(!exists('g:vscode'), { 'do': { -> fzf#install() } })
 Plug 'junegunn/fzf.vim', Cond(!exists('g:vscode'))
 Plug 'junegunn/rainbow_parentheses.vim', Cond(!exists('g:vscode'))
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}, Cond(!exists('g:vscode'))
-Plug 'neoclide/coc.nvim', {'branch': 'release'}, Cond(!exists('g:vscode'))
+Plug 'mg979/vim-visual-multi', Cond(!exists('g:vscode'), {'branch': 'master'})
+Plug 'neoclide/coc.nvim', Cond(!exists('g:vscode'), {'branch': 'release'})
 Plug 'sheerun/vim-polyglot', Cond(!exists('g:vscode'))
 " onedark them similar to vscode
 Plug 'joshdick/onedark.vim', Cond(!exists('g:vscode'))
@@ -43,8 +43,8 @@ Plug 'airblade/vim-rooter', Cond(!exists('g:vscode'))
 Plug 'rhysd/vim-grammarous', Cond(!exists('g:vscode'))
 Plug 'haya14busa/is.vim', Cond(!exists('g:vscode'))
 Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
-Plug 'sonph/onehalf', { 'rtp': 'vim' }, Cond(!exists('g:vscode'))
-Plug 'dracula/vim', { 'as': 'dracula' }, Cond(!exists('g:vscode'))
+Plug 'sonph/onehalf', Cond(!exists('g:vscode'), { 'rtp': 'vim' })
+Plug 'dracula/vim', Cond(!exists('g:vscode'), { 'as': 'dracula' })
 Plug 'KeitaNakamura/neodark.vim', Cond(!exists('g:vscode'))
 Plug 'mhartington/oceanic-next', Cond(!exists('g:vscode'))
 
