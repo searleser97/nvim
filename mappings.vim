@@ -4,12 +4,14 @@ noremap <C-c> "+y
 noremap <C-v> "+p
 " visual block selection with 'ctrl+b'
 noremap <C-b> <C-v>
+" space+w behaves like ctrl+w
+nnoremap <space>w <C-w>
+" Deletes previous chars with Backspace key
+nnoremap <Bs> X
 " change word to uppercase in insert mode with ctrl+u
 inoremap <C-u> <Esc>gUiw`]a
 " adds the ability to undo word by word
 inoremap <Space> <Space><C-g>u
-" Deletes previous chars with Backspace key
-map <Bs> X
 " makes ctrl-c trigger TurnOffCaps()
 inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
 
@@ -61,9 +63,10 @@ if !exists('g:vscode')
       map gp <Plug>(grammarous-move-to-previous-error)
 else
       nnoremap u <Cmd>call VSCodeNotify('undo')<CR>
-      nnoremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
-      nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>
-      nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<CR>
+      noremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
+      noremap <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>
+      noremap <C-l> <Cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<CR>
+      noremap <C-w> <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
       noremap ? <Cmd>call VSCodeReplaceInFile()<CR>
 endif
 
