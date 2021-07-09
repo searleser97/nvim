@@ -12,19 +12,15 @@ noremap <C-c> "+y
 noremap <C-v> "+p
 " makes ctrl-c trigger TurnOffCaps()
 inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
-"rename exact words in entire file
-:command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
-map <space>rg :<C-u>ReplaceWords
-"rename exact words within selection
-:command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
-map <space>rs :<C-u>ReplaceWordsInSelection
 
 map <space>f <Plug>Sneak_s
 map <space>F <Plug>Sneak_S
 
-noremap ? <Cmd>call VSCodeReplaceInFile()<CR>
-
 if !exists('g:vscode')
+      "replace exact words (case sensitive) in entire file or selection
+      :command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
+      :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
+      map <expr> ? mode() ==# 'V' ? ':<C-u>ReplaceWordsInSelection ':':<C-u>ReplaceWords '
       " loads c++ template with space+l+t (Load Template)
       map <space>lt :r ~/Projects/competitive-programming-reference/Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp<CR>
       " copies entire text with space+a
@@ -67,5 +63,6 @@ else
       nnoremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
       nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>
       nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.nextEditorInGroup')<CR>
+      noremap ? <Cmd>call VSCodeReplaceInFile()<CR>
 endif
 
