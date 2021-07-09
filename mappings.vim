@@ -20,7 +20,8 @@ if !exists('g:vscode')
       "replace exact words (case sensitive) in entire file or selection
       :command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
       :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
-      map <expr> ? mode() ==# 'V' ? ':<C-u>ReplaceWordsInSelection ':':<C-u>ReplaceWords '
+      "map <expr> ? mode() ==# 'V' ? ':<C-u>ReplaceWordsInSelection ':':<C-u>ReplaceWords '
+      map ? <cmd>call FReplaceFactory()<CR>
       " loads c++ template with space+l+t (Load Template)
       map <space>lt :r ~/Projects/competitive-programming-reference/Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp<CR>
       " copies entire text with space+a

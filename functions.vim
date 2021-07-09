@@ -1,5 +1,10 @@
+function! ReplaceWordsInSingleLineSelection(...)
+  if a:0 == 2
+    execute '%s/\%v\<' . a:1 . '\>/' . a:2 . '/gc'
+  endif
+endfunction
 
-function! FReplaceWordsInSelection(...)
+function! ReplaceWordsInMultiLineSelection(...)
   if a:0 == 2
     execute '%s/\%V\<' . a:1 . '\>/' . a:2 . '/gc'
   endif
@@ -7,7 +12,26 @@ endfunction
 
 function! FReplaceWords(...)
   if a:0 == 2
-    execute '%s/\<' . a:1 . '\>/' . a:2 . '/gc'
+    exec '%s/\<' . a:1 . '\>/' . a:2 . '/gc'
+  endif
+endfunction
+
+function! FReplaceFactory()
+  let mode = mode()
+
+  call inputsave()
+  let word1 = input('Find: ')
+  call inputrestore()
+  call inputsave()
+  let word2 = input('Replace: ')
+  call inputrestore()
+
+  if mode ==# 'V'
+    call ReplaceWordsInMultiLineSelection(word1, word2)
+  elseif mode ==# 'v'
+    call ReplaceWordsInSingleLineSelection(word1, word2)
+  else
+    call ReplaceWords(word1, word2)
   endif
 endfunction
 
