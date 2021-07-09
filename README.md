@@ -21,3 +21,16 @@ cd fonts
 ```shell
 yay -S nerd-fonts-complete` and use one NERD font
 ```
+### Shared clipboard when using WSL on Windows
+
+We use [win32yank](https://github.com/equalsraf/win32yank) to share clipboard between neovim WSL and windows. It makes the `+` registry send the data to windows and viceversa automatically, just run the following commands inside your WSL and it will work magically.
+
+```shell
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
+```
+
+This also helps when using vscode-neovim
+
