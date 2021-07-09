@@ -6,10 +6,6 @@ inoremap <C-u> <Esc>gUiw`]a
 inoremap <Space> <Space><C-g>u
 " Deletes previous chars with Backspace key
 map <Bs> X
-" copy selected text to clipboard with 'ctrl+c'
-noremap <C-c> "+y
-" paste from clipboard with 'ctrl+v'
-noremap <C-v> "+p
 " makes ctrl-c trigger TurnOffCaps()
 inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
 
@@ -17,6 +13,10 @@ map <space>f <Plug>Sneak_s
 map <space>F <Plug>Sneak_S
 
 if !exists('g:vscode')
+      " copy selected text to clipboard with 'ctrl+c'
+      noremap <C-c> "+y
+      " paste from clipboard with 'ctrl+v'
+      noremap <C-v> "+p
       "replace exact words (case sensitive) in entire file or selection
       :command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
       :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
@@ -60,6 +60,8 @@ if !exists('g:vscode')
       map gn <Plug>(grammarous-move-to-next-error)
       map gp <Plug>(grammarous-move-to-previous-error)
 else
+      noremap <C-c> <Cmd>call VSCodeNotifyVisual('editor.action.clipboardCopyAction', 0)<CR><C-c>
+      noremap <C-v> <Cmd>call VSCodeNotify('editor.action.clipboardPasteAction')<CR>
       nnoremap u <Cmd>call VSCodeNotify('undo')<CR>
       nnoremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
       nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>

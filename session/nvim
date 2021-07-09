@@ -10,16 +10,12 @@ endif
 set shortmess=aoO
 badd +4 init.vim
 badd +33 plugins.vim
-badd +24 mappings.vim
-badd +19 functions.vim
+badd +23 mappings.vim
+badd +27 functions.vim
 argglobal
 %argdel
-edit functions.vim
+edit mappings.vim
 set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -27,10 +23,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 18 + 16) / 33)
-exe '2resize ' . ((&lines * 10 + 16) / 33)
 argglobal
-balt mappings.vim
+balt functions.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -41,42 +35,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((7 * winheight(0) + 9) / 18)
+let s:l = 23 - ((13 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
-normal! 05|
-wincmd w
-argglobal
-if bufexists("term://~/.config/nvim//5999:/usr/bin/zsh;\#toggleterm\#1") | buffer term://~/.config/nvim//5999:/usr/bin/zsh;\#toggleterm\#1 | else | edit term://~/.config/nvim//5999:/usr/bin/zsh;\#toggleterm\#1 | endif
-if &buftype ==# 'terminal'
-  silent file term://~/.config/nvim//5999:/usr/bin/zsh;\#toggleterm\#1
-endif
-balt functions.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 10 - ((9 * winheight(0) + 5) / 10)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 10
+keepjumps 23
 normal! 0
-wincmd w
-exe '1resize ' . ((&lines * 18 + 16) / 33)
-exe '2resize ' . ((&lines * 10 + 16) / 33)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFAcI
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFAIc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
