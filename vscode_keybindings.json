@@ -1,5 +1,17 @@
 [
   {
+    "command": "vscode-neovim.send",
+    "key": "ctrl+c",
+    "when": "editorTextFocus && neovim.mode == visual",
+    "args": "<C-c>"
+  },
+  {
+    "command": "vscode-neovim.send",
+    "key": "ctrl+b",
+    "when": "editorTextFocus && neovim.mode == normal",
+    "args": "<C-b>"
+  },
+  {
     "key": "ctrl+alt+o",
     "command": "terminalHere.create"
   },
@@ -34,31 +46,6 @@
     "when": "terminalFocus && terminalTextSelected"
   },
   {
-    "key": "shift+enter",
-    "command": "-python.execSelectionInTerminal",
-    "when": "editorTextFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-jupyter.runcurrentcelladvance",
-    "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection"
-  },
-  {
-    "key": "shift+enter",
-    "command": "-jupyter.execSelectionInteractive",
-    "when": "editorTextFocus && jupyter.featureenabled && jupyter.ownsSelection && !findInputFocussed && !replaceInputFocussed && editorLangId == 'python'"
-  },
-  {
-    "key": "alt+enter",
-    "command": "-jupyter.runcurrentcellandaddbelow",
-    "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection"
-  },
-  {
-    "key": "ctrl+enter",
-    "command": "-jupyter.runcurrentcell",
-    "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection"
-  },
-  {
     "key": "shift+alt+w",
     "command": "workbench.action.closeEditorsInOtherGroups"
   },
@@ -73,17 +60,5 @@
   {
     "key": "ctrl+w",
     "command": "-workbench.action.closeActiveEditor"
-  },
-  {
-    "command": "vscode-neovim.send",
-    "key": "ctrl+c",
-    "when": "editorTextFocus && neovim.mode == visual",
-    "args": "<C-c>"
-  },
-  {
-    "command": "vscode-neovim.send",
-    "key": "ctrl+b",
-    "when": "editorTextFocus && neovim.mode == normal",
-    "args": "<C-b>"
   }
 ]

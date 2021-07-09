@@ -1,3 +1,7 @@
+" copy selected text to clipboard with 'ctrl+c'
+noremap <C-c> "+y
+" paste from clipboard with 'ctrl+v'
+noremap <C-v> "+p
 " visual block selection with 'ctrl+b'
 noremap <C-b> <C-v>
 " change word to uppercase in insert mode with ctrl+u
@@ -13,10 +17,6 @@ map <space>f <Plug>Sneak_s
 map <space>F <Plug>Sneak_S
 
 if !exists('g:vscode')
-      " copy selected text to clipboard with 'ctrl+c'
-      noremap <C-c> "+y
-      " paste from clipboard with 'ctrl+v'
-      noremap <C-v> "+p
       "replace exact words (case sensitive) in entire file or selection
       :command -nargs=+ ReplaceWords call FReplaceWords(<f-args>)
       :command -nargs=+ ReplaceWordsInSelection call FReplaceWordsInSelection(<f-args>)
