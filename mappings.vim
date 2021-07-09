@@ -52,7 +52,7 @@ if !exists('g:vscode')
       " comments in-line
       map <C-\> <Plug>NERDCommenterComment
       " opens fzf file search
-      map <C-f> :Files<CR>
+      map <C-p> :Files<CR>
       " opens fzf file search in competitive programming reference directory with
       map <space>ref :Files ~/Projects/competitive-programming-reference/Reference<CR>
 
