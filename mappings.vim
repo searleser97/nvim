@@ -60,8 +60,8 @@ if !exists('g:vscode')
       map gn <Plug>(grammarous-move-to-next-error)
       map gp <Plug>(grammarous-move-to-previous-error)
 else
-      noremap <C-c> <Cmd>call VSCodeNotifyVisual('editor.action.clipboardCopyAction', 0)<CR><C-c>
-      noremap <C-v> <Cmd>call VSCodeNotify('editor.action.clipboardPasteAction')<CR>
+      "noremap <C-c> <Cmd>call VSCodeNotifyVisual('editor.action.clipboardCopyAction', 0)<CR><C-c>
+      "noremap <C-v> <Cmd>call VSCodeNotify('editor.action.clipboardPasteAction')<CR>
       nnoremap u <Cmd>call VSCodeNotify('undo')<CR>
       nnoremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
       nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditorInGroup')<CR>
