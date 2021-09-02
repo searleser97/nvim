@@ -35,3 +35,15 @@ sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
 ```
 
 This also helps when using vscode-neovim
+
+### Sync Vim and Neovim configs
+
+```shell
+rm -f ~/.vimrc
+rm -f ~/.vim
+
+ln -sf ~/.config/nvim/init.vim ~/.config/nvim/vimrc
+ln -sf ~/.config/nvim ~/.vim
+```
+
+the next thing is to update the runtime in `init.vim` but that is already written in that file
