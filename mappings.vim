@@ -14,8 +14,8 @@ inoremap <C-u> <Esc>gUiw`]a
 inoremap <Space> <Space><C-g>u
 " makes ctrl-c trigger TurnOffCaps()
 inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
-" paste just yanked stuff not deleted stuff
-"noremap p "0p
+" paste just yanked stuff not deleted stuff with 0
+noremap 0 "0p
 
 map <space>f <Plug>Sneak_s
 map <space>F <Plug>Sneak_S
