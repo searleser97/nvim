@@ -48,6 +48,8 @@ augroup SAVING
     autocmd!
     autocmd BufWritePost * echo strftime('%c')
 augroup END
+" sets command section height to 2, this prevents 'press enter to continue messages'
+set cmdheight=2
 " show comments in italics
 hi Comment cterm=italic
 " to remove background when using terminal
