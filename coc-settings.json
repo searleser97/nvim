@@ -1,7 +1,7 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown",
-    "javascript", "graphql", "html", "yaml",  "json", "python",
-    "javascriptreact", "typescript", "typescriptreact", "tex"],
+  //"coc.preferences.formatOnSaveFiletypes": ["css", "markdown",
+    //"javascript", "graphql", "html", "yaml",  "json", "python",
+    //"javascriptreact", "typescript", "typescriptreact", "tex"],
   "explorer.width": 30,
   "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",
   "explorer.file.root.template": "[icon & 1] ROOT ([root])",

@@ -14,6 +14,8 @@ inoremap <C-u> <Esc>gUiw`]a
 inoremap <Space> <Space><C-g>u
 " makes ctrl-c trigger TurnOffCaps()
 inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
+" paste just yanked stuff not deleted stuff
+noremap p "0p
 
 map <space>f <Plug>Sneak_s
 map <space>F <Plug>Sneak_S
@@ -61,6 +63,14 @@ if !exists('g:vscode')
       map gf <Plug>(grammarous-fixit)
       map gn <Plug>(grammarous-move-to-next-error)
       map gp <Plug>(grammarous-move-to-previous-error)
+
+      :command -nargs=? T call cpbooster#CpboosterTest(<f-args>)
+      :command -nargs=? D call cpbooster#CpboosterDebug(<f-args>)
+      :command -nargs=? C call cpbooster#CpboosterCreate(<f-args>)
+      :command -nargs=? Rt call cpbooster#CpboosterRTest(<f-args>)
+      :command -nargs=? Rd call cpbooster#CpboosterRDebug(<f-args>)
+      :command -nargs=? A call cpbooster#CpboosterAddtc(<f-args>)
+      :command -nargs=? S call cpbooster#CpboosterSubmit(<f-args>)
 else
       nnoremap u <Cmd>call VSCodeNotify('undo')<CR>
       noremap <C-r> <Cmd>call VSCodeNotify('redo')<CR>
