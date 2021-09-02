@@ -65,5 +65,13 @@ let g:terminal_color_1 = '#AB4642'
 let g:terminal_color_2 = '#5b8a3a'
 let g:terminal_color_15 = '#FFFFFF'
 
-
+if (!has('nvim'))
+    " cursor shape and color settings
+    autocmd VimEnter * silent !konsoleprofile UseCustomCursorColor=1
+    let &t_SI = "\<Esc>]50;CustomCursorColor=orange;CursorShape=1\x7"
+    let &t_SR = "\<Esc>]50;CustomCursorColor=orange;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CustomCursorColor=orange;CursorShape=0\x7"
+    silent !konsoleprofile CustomCursorColor=orange
+    autocmd VimLeave * silent !konsoleprofile UseCustomCursorColor=0;BlinkingCursorEnabled=0
+endif
 
