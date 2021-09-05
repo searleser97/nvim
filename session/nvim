@@ -8,17 +8,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 mappings.vim
-badd +58 settings.vim
-badd +1 ~/.config/nvim/functions.vim
-badd +17 ~/.config/nvim/init.vim
-badd +1 ~/.config/nvim/plugins.vim
-badd +1 ~/.config/nvim/minimap.vim
+badd +4 settings.vim
+badd +6 functions.vim
+badd +52 plugins.vim
+badd +14 themes/airline.vim
 argglobal
 %argdel
-edit settings.vim
+edit themes/airline.vim
 argglobal
-balt ~/.config/nvim/init.vim
+balt plugins.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -29,12 +27,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 51 - ((40 * winheight(0) + 22) / 45)
+let s:l = 15 - ((14 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 51
-normal! 084|
+keepjumps 15
+normal! 038|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

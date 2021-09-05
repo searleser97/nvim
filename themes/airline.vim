@@ -7,7 +7,17 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Switch to your current theme
-let g:airline_theme = 'onedark'
+if has('nvim')
+      let g:airline_theme = 'onedark'
+else
+      "let g:airline_theme = 'understated'
+      "let g:airline_theme = 'solarized_flood'
+      let g:airline_theme = 'lessnoise'
+      "let g:airline_theme = 'fruit_punch'
+      "let g:airline_theme = 'cool'
+      "let g:airline_theme = 'cobalt2'
+
+endif
 
 " Always show tabs
 set showtabline=2
