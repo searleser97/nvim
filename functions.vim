@@ -16,22 +16,32 @@ function! FReplaceWords(...)
   endif
 endfunction
 
-function! FReplaceFactory()
+function! IsAnyVisualMode()
   let mode = mode()
-
-  call inputsave()
-  let word1 = input('Find: ')
-  call inputrestore()
-  call inputsave()
-  let word2 = input('Replace: ')
-  call inputrestore()
-
-  if mode ==# 'V'
-    call ReplaceWordsInMultiLineSelection(word1, word2)
-  elseif mode ==# 'v'
-    call ReplaceWordsInSingleLineSelection(word1, word2)
+  if mode == 'V' || mode == 'v' || mode == "\<C-V>"
+    return 1
   else
-    call ReplaceWords(word1, word2)
+    return 0
+  endif
+endfunction
+
+function! FReplaceFactory(...)
+  if (a:0 != 3)
+    echo "This function expects 3 arguments, " . a:0 . " sent"
+    return
+  endif
+
+  let isInFile = a:3 == 'inFile'
+  let mode = isInFile ? 'n' : visualmode()
+  let word1 = a:1
+  let word2 = a:2
+
+  if mode == 'v'
+    call ReplaceWordsInSingleLineSelection(word1, word2)
+  elseif mode == 'V' || mode == "\<C-V>" 
+    call ReplaceWordsInMultiLineSelection(word1, word2)
+  else
+    call FReplaceWords(word1, word2)
   endif
 endfunction
 
