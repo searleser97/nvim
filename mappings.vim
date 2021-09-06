@@ -8,12 +8,6 @@ noremap <C-b> <C-v>
 nnoremap <space>w <C-w>
 " Deletes previous chars with Backspace key
 nnoremap <Bs> X
-" change word to uppercase in insert mode with ctrl+u
-inoremap <C-u> <Esc>gUiw`]a
-" adds the ability to undo word by word
-inoremap <Space> <Space><C-g>u
-" makes ctrl-c trigger TurnOffCaps()
-inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
 " paste just yanked stuff not deleted stuff with 0
 noremap 0 "0p
 
@@ -26,6 +20,12 @@ if Except_vscode()
       :command -nargs=+ ReplaceInFile call FReplaceFactory(<f-args>, 'inFile')
       noremap <expr> ? IsAnyVisualMode() ? ':<C-u>ReplaceInSelection<space>':':<C-u>ReplaceInFile<space>'
 
+      " adds the ability to undo word by word
+      inoremap <Space> <Space><C-g>u
+      " change word to uppercase in insert mode with ctrl+u
+      inoremap <C-u> <Esc>gUiw`]a
+      " makes ctrl-c trigger TurnOffCaps()
+      inoremap <c-c> <c-c>:call TurnOffCaps()<CR>
       " loads c++ template with space+l+t (Load Template)
       map <space>lt :r ~/Projects/competitive-programming-reference/Reference/Coding\ Resources/C++/Competitive\ Programming\ Template.cpp<CR>
       " copies entire text with space+a
