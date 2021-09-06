@@ -22,30 +22,6 @@ if !has('nvim') && g:is_vim8
   let &packpath = &runtimepath
 endif
 
-function! Just_nvim()
-  return has('nvim') && !exists('g:vscode') && !exists('g:started_by_firenvim')
-endfunction
-
-function! Just_vim()
-  return !has('nvim')
-endfunction
-
-function! Just_nvim_and_vim()
-  return Just_nvim() || Just_vim()
-endfunction
-
-function! Just_vscode()
-  return exists('g:vscode')
-endfunction
-
-function! Just_firenvim()
-  return exists('g:started_by_firenvim')
-endfunction
-
-function! Except_firenvim()
-  return Just_nvim_and_vim() || Just_vscode()
-endfunction
-
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'searleser97/cpbooster.vim', Cond(Except_firenvim())
@@ -53,37 +29,37 @@ Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'adelarsq/vim-matchit'
 
-Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(0) }})
+Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(1) }})
 
 Plug 'neoclide/coc.nvim', Cond(Just_nvim(), {'branch': 'release'})
 Plug 'mhinz/vim-startify', Cond(Just_nvim())
 Plug 'mhinz/nvim-colorizer.lua', Cond(Just_nvim())
 Plug 'mhinz/nvim-toggleterm.lua', Cond(Just_nvim())
 
-Plug 'junegunn/fzf', Cond(Just_nvim_and_vim(), { 'do': { -> fzf#install() } })
-Plug 'junegunn/fzf.vim', Cond(Just_nvim_and_vim())
-Plug 'junegunn/rainbow_parentheses.vim', Cond(Just_nvim_and_vim())
-Plug 'mg979/vim-visual-multi', Cond(Just_nvim_and_vim(), {'branch': 'master'})
-Plug 'sheerun/vim-polyglot', Cond(Just_nvim_and_vim())
+Plug 'junegunn/fzf', Cond(Just_nvim_or_vim(), { 'do': { -> fzf#install() } })
+Plug 'junegunn/fzf.vim', Cond(Just_nvim_or_vim())
+Plug 'junegunn/rainbow_parentheses.vim', Cond(Just_nvim_or_vim())
+Plug 'mg979/vim-visual-multi', Cond(Just_nvim_or_vim(), {'branch': 'master'})
+Plug 'sheerun/vim-polyglot', Cond(Just_nvim_or_vim())
 " onedark them similar to vscode
-Plug 'joshdick/onedark.vim', Cond(Just_nvim_and_vim())
-Plug 'vim-airline/vim-airline', Cond(Just_nvim_and_vim())
-Plug 'vim-airline/vim-airline-themes', Cond(Just_nvim_and_vim())
-Plug 'preservim/nerdcommenter', Cond(Just_nvim_and_vim())
+Plug 'joshdick/onedark.vim', Cond(Except_vscode())
+Plug 'vim-airline/vim-airline', Cond(Just_nvim_or_vim())
+Plug 'vim-airline/vim-airline-themes', Cond(Just_nvim_or_vim())
+Plug 'preservim/nerdcommenter', Cond(Just_nvim_or_vim())
 " `yay -S nerd-fonts-complete` and use one NERD font
-Plug 'ryanoasis/vim-devicons', Cond(Just_nvim_and_vim())
-Plug 'mhinz/vim-signify', Cond(Just_nvim_and_vim())
+Plug 'ryanoasis/vim-devicons', Cond(Just_nvim_or_vim())
+Plug 'mhinz/vim-signify', Cond(Just_nvim_or_vim())
 
-Plug 'brooth/far.vim', Cond(Just_nvim_and_vim())
+Plug 'brooth/far.vim', Cond(Just_nvim_or_vim())
 "Plug 'wfxr/minimap.vim'
-Plug 'Yggdroot/indentLine', Cond(Just_nvim_and_vim())
-Plug 'airblade/vim-rooter', Cond(Just_nvim_and_vim())
-Plug 'rhysd/vim-grammarous', Cond(Just_nvim_and_vim())
-Plug 'haya14busa/is.vim', Cond(Just_nvim_and_vim())
-Plug 'tpope/vim-fugitive', Cond(Just_nvim_and_vim())
-Plug 'sonph/onehalf', Cond(Just_nvim_and_vim(), { 'rtp': 'vim' })
-Plug 'dracula/vim', Cond(Just_nvim_and_vim(), { 'as': 'dracula' })
-Plug 'KeitaNakamura/neodark.vim', Cond(Just_nvim_and_vim())
-Plug 'mhartington/oceanic-next', Cond(Just_nvim_and_vim())
+Plug 'Yggdroot/indentLine', Cond(Just_nvim_or_vim())
+Plug 'airblade/vim-rooter', Cond(Just_nvim_or_vim())
+Plug 'rhysd/vim-grammarous', Cond(Just_nvim_or_vim())
+Plug 'haya14busa/is.vim', Cond(Just_nvim_or_vim())
+Plug 'tpope/vim-fugitive', Cond(Just_nvim_or_vim())
+Plug 'sonph/onehalf', Cond(Just_nvim_or_vim(), { 'rtp': 'vim' })
+Plug 'dracula/vim', Cond(Just_nvim_or_vim(), { 'as': 'dracula' })
+Plug 'KeitaNakamura/neodark.vim', Cond(Just_nvim_or_vim())
+Plug 'mhartington/oceanic-next', Cond(Just_nvim_or_vim())
 
 call plug#end()
