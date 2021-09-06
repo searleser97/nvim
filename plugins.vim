@@ -22,42 +22,68 @@ if !has('nvim') && g:is_vim8
   let &packpath = &runtimepath
 endif
 
+function! Just_nvim()
+  return has('nvim') && !exists('g:vscode') && !exists('g:started_by_firenvim')
+endfunction
+
+function! Just_vim()
+  return !has('nvim')
+endfunction
+
+function! Just_nvim_and_vim()
+  return Just_nvim() || Just_vim()
+endfunction
+
+function! Just_vscode()
+  return exists('g:vscode')
+endfunction
+
+function! Just_firenvim()
+  return exists('g:started_by_firenvim')
+endfunction
+
+function! Except_firenvim()
+  return Just_nvim_and_vim() || Just_vscode()
+endfunction
+
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+Plug 'searleser97/cpbooster.vim', Cond(Except_firenvim())
 Plug 'justinmk/vim-sneak'
-Plug 'searleser97/cpbooster.vim'
 Plug 'unblevable/quick-scope'
 Plug 'adelarsq/vim-matchit'
 
-Plug 'neoclide/coc.nvim', Cond(has('nvim') && !exists('g:vscode'), {'branch': 'release'})
-Plug 'mhinz/vim-startify', Cond(has('nvim') && !exists('g:vscode'))
-Plug 'mhinz/nvim-colorizer.lua', Cond(has('nvim') && !exists('g:vscode'))
-Plug 'mhinz/nvim-toggleterm.lua', Cond(has('nvim') && !exists('g:vscode'))
+Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(0) }})
 
-Plug 'junegunn/fzf', Cond(!exists('g:vscode'), { 'do': { -> fzf#install() } })
-Plug 'junegunn/fzf.vim', Cond(!exists('g:vscode'))
-Plug 'junegunn/rainbow_parentheses.vim', Cond(!exists('g:vscode'))
-Plug 'mg979/vim-visual-multi', Cond(!exists('g:vscode'), {'branch': 'master'})
-Plug 'sheerun/vim-polyglot', Cond(!exists('g:vscode'))
+Plug 'neoclide/coc.nvim', Cond(Just_nvim(), {'branch': 'release'})
+Plug 'mhinz/vim-startify', Cond(Just_nvim())
+Plug 'mhinz/nvim-colorizer.lua', Cond(Just_nvim())
+Plug 'mhinz/nvim-toggleterm.lua', Cond(Just_nvim())
+
+Plug 'junegunn/fzf', Cond(Just_nvim_and_vim(), { 'do': { -> fzf#install() } })
+Plug 'junegunn/fzf.vim', Cond(Just_nvim_and_vim())
+Plug 'junegunn/rainbow_parentheses.vim', Cond(Just_nvim_and_vim())
+Plug 'mg979/vim-visual-multi', Cond(Just_nvim_and_vim(), {'branch': 'master'})
+Plug 'sheerun/vim-polyglot', Cond(Just_nvim_and_vim())
 " onedark them similar to vscode
-Plug 'joshdick/onedark.vim', Cond(!exists('g:vscode'))
-Plug 'vim-airline/vim-airline', Cond(!exists('g:vscode'))
-Plug 'vim-airline/vim-airline-themes', Cond(!exists('g:vscode'))
-Plug 'preservim/nerdcommenter', Cond(!exists('g:vscode'))
+Plug 'joshdick/onedark.vim', Cond(Just_nvim_and_vim())
+Plug 'vim-airline/vim-airline', Cond(Just_nvim_and_vim())
+Plug 'vim-airline/vim-airline-themes', Cond(Just_nvim_and_vim())
+Plug 'preservim/nerdcommenter', Cond(Just_nvim_and_vim())
 " `yay -S nerd-fonts-complete` and use one NERD font
-Plug 'ryanoasis/vim-devicons', Cond(!exists('g:vscode'))
-Plug 'mhinz/vim-signify', Cond(!exists('g:vscode'))
+Plug 'ryanoasis/vim-devicons', Cond(Just_nvim_and_vim())
+Plug 'mhinz/vim-signify', Cond(Just_nvim_and_vim())
 
-Plug 'brooth/far.vim', Cond(!exists('g:vscode'))
+Plug 'brooth/far.vim', Cond(Just_nvim_and_vim())
 "Plug 'wfxr/minimap.vim'
-Plug 'Yggdroot/indentLine', Cond(!exists('g:vscode'))
-Plug 'airblade/vim-rooter', Cond(!exists('g:vscode'))
-Plug 'rhysd/vim-grammarous', Cond(!exists('g:vscode'))
-Plug 'haya14busa/is.vim', Cond(!exists('g:vscode'))
-Plug 'tpope/vim-fugitive', Cond(!exists('g:vscode'))
-Plug 'sonph/onehalf', Cond(!exists('g:vscode'), { 'rtp': 'vim' })
-Plug 'dracula/vim', Cond(!exists('g:vscode'), { 'as': 'dracula' })
-Plug 'KeitaNakamura/neodark.vim', Cond(!exists('g:vscode'))
-Plug 'mhartington/oceanic-next', Cond(!exists('g:vscode'))
+Plug 'Yggdroot/indentLine', Cond(Just_nvim_and_vim())
+Plug 'airblade/vim-rooter', Cond(Just_nvim_and_vim())
+Plug 'rhysd/vim-grammarous', Cond(Just_nvim_and_vim())
+Plug 'haya14busa/is.vim', Cond(Just_nvim_and_vim())
+Plug 'tpope/vim-fugitive', Cond(Just_nvim_and_vim())
+Plug 'sonph/onehalf', Cond(Just_nvim_and_vim(), { 'rtp': 'vim' })
+Plug 'dracula/vim', Cond(Just_nvim_and_vim(), { 'as': 'dracula' })
+Plug 'KeitaNakamura/neodark.vim', Cond(Just_nvim_and_vim())
+Plug 'mhartington/oceanic-next', Cond(Just_nvim_and_vim())
 
 call plug#end()

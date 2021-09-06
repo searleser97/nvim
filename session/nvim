@@ -11,12 +11,12 @@ set shortmess=aoO
 badd +4 settings.vim
 badd +6 functions.vim
 badd +52 plugins.vim
-badd +14 themes/airline.vim
+badd +15 themes/airline.vim
 argglobal
 %argdel
-edit themes/airline.vim
+edit plugins.vim
 argglobal
-balt plugins.vim
+balt themes/airline.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -27,12 +27,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 10) / 21)
+let s:l = 51 - ((14 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
-normal! 038|
+keepjumps 51
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
