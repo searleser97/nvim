@@ -24,6 +24,8 @@ set autoindent
 set smartindent
 " show ocurrences while typing in a search command
 set incsearch
+" highlight search
+set hlsearch
 " enables mouse interaction
 set mouse=a
 " enables nice status bar with lightline plugin

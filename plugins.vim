@@ -28,6 +28,7 @@ Plug 'searleser97/cpbooster.vim', Cond(Except_firenvim())
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'adelarsq/vim-matchit'
+Plug 'haya14busa/is.vim'
 
 Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(1) }})
 
@@ -55,7 +56,6 @@ Plug 'brooth/far.vim', Cond(Just_nvim_or_vim())
 Plug 'Yggdroot/indentLine', Cond(Just_nvim_or_vim())
 Plug 'airblade/vim-rooter', Cond(Just_nvim_or_vim())
 Plug 'rhysd/vim-grammarous', Cond(Just_nvim_or_vim())
-Plug 'haya14busa/is.vim', Cond(Just_nvim_or_vim())
 Plug 'tpope/vim-fugitive', Cond(Just_nvim_or_vim())
 Plug 'sonph/onehalf', Cond(Just_nvim_or_vim(), { 'rtp': 'vim' })
 Plug 'dracula/vim', Cond(Just_nvim_or_vim(), { 'as': 'dracula' })
