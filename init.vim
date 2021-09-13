@@ -62,5 +62,9 @@ if Except_vscode()
   source $HOME/.config/nvim/themes/onedark.vim
 endif
 
+if Just_firenvim()
+  source $HOME/.config/nvim/firenvim.vim
+endif
+
 source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/functions.vim
