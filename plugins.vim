@@ -34,8 +34,8 @@ Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(
 
 Plug 'neoclide/coc.nvim', Cond(Just_nvim(), {'branch': 'release'})
 Plug 'mhinz/vim-startify', Cond(Just_nvim())
-Plug 'mhinz/nvim-colorizer.lua', Cond(Just_nvim())
-Plug 'mhinz/nvim-toggleterm.lua', Cond(Just_nvim())
+Plug 'norcalli/nvim-colorizer.lua', Cond(Just_nvim())
+Plug 'akinsho/nvim-toggleterm.lua', Cond(Just_nvim())
 
 Plug 'junegunn/fzf', Cond(Just_nvim_or_vim(), { 'do': { -> fzf#install() } })
 Plug 'junegunn/fzf.vim', Cond(Just_nvim_or_vim())

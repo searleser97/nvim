@@ -7,7 +7,6 @@ let g:firenvim_config = {
             \ 'cmdline': 'neovim',
             \ 'content': 'text',
             \ 'priority': 0,
-            \ 'selector': 'textarea',
             \ 'takeover': 'always',
         \ },
     \ }
