@@ -11,12 +11,13 @@ set shortmess=aoO
 badd +21 functions.vim
 badd +29 init.vim
 badd +49 mappings.vim
-badd +0 firenvim.vim
+badd +19 firenvim.vim
+badd +10 far.vim
 argglobal
 %argdel
 edit firenvim.vim
 argglobal
-balt init.vim
+balt mappings.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -27,11 +28,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 10) / 21)
+let s:l = 20 - ((19 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
+keepjumps 20
 normal! 025|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
