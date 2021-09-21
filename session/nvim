@@ -11,7 +11,7 @@ set shortmess=aoO
 badd +21 functions.vim
 badd +29 init.vim
 badd +49 mappings.vim
-badd +19 firenvim.vim
+badd +20 firenvim.vim
 badd +10 far.vim
 argglobal
 %argdel

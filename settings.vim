@@ -47,8 +47,8 @@ filetype plugin on
 set sessionoptions=buffers,curdir,folds,help,tabpages,winsize
 " echoes time when saving a file
 augroup SAVING
-    autocmd!
-    autocmd BufWritePost * echo strftime('%c')
+  autocmd!
+  autocmd BufWritePost * echo strftime('%c')
 augroup END
 " sets command section height to 2, this prevents 'press enter to continue messages'
 set cmdheight=2
@@ -56,26 +56,32 @@ set cmdheight=2
 hi Comment cterm=italic
 " to remove background when using terminal
 if (has("autocmd") && !exists('g:GuiLoaded'))
-    hi Normal guibg=NONE ctermbg=NONE
+  hi Normal guibg=NONE ctermbg=NONE
 endif
 " checks if your terminal has 24-bit color support
 " if yes it enables termguicolors
 if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
+  set termguicolors
+  hi LineNr ctermbg=NONE guibg=NONE
 endif
 " overrides terminal colors of current theme
-let g:terminal_color_1 = '#AB4642'
-let g:terminal_color_2 = '#5b8a3a'
-let g:terminal_color_15 = '#FFFFFF'
+if (Just_nvim())
+  let g:terminal_color_1 = '#AB4642'
+  let g:terminal_color_2 = '#5b8a3a'
+  let g:terminal_color_15 = '#FFFFFF'
+elseif (Just_vim())
+  let g:terminal_ansi_colors[1] = '#AB4642'
+  let g:terminal_ansi_colors[2] = '#5b8a3a'
+  let g:terminal_ansi_colors[15] = '#FFFFFF'
+endif
 
 if (!has('nvim'))
-    " cursor shape and color settings
-    autocmd VimEnter * silent !konsoleprofile UseCustomCursorColor=1
-    let &t_SI = "\<Esc>]50;CustomCursorColor=orange;CursorShape=1\x7"
-    let &t_SR = "\<Esc>]50;CustomCursorColor=orange;CursorShape=2\x7"
-    let &t_EI = "\<Esc>]50;CustomCursorColor=orange;CursorShape=0\x7"
-    silent !konsoleprofile CustomCursorColor=orange
-    autocmd VimLeave * silent !konsoleprofile UseCustomCursorColor=0;BlinkingCursorEnabled=0
+  " cursor shape and color settings
+  autocmd VimEnter * silent !konsoleprofile UseCustomCursorColor=1
+  let &t_SI = "\<Esc>]50;CustomCursorColor=orange;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CustomCursorColor=orange;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CustomCursorColor=orange;CursorShape=0\x7"
+  silent !konsoleprofile CustomCursorColor=orange
+  autocmd VimLeave * silent !konsoleprofile UseCustomCursorColor=0;BlinkingCursorEnabled=0
 endif
 
