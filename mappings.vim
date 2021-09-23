@@ -32,8 +32,6 @@ if Except_vscode()
       map <space>a  ggVG<C-c><C-o><C-o>zz:echo "Contents Copied to clipboard"<CR>
       " indents whole file with 'space+i+a' (Indent All)
       map <space>ia gg=G``zz
-      " cycle through buffers (left to right) with <tab>
-      noremap <tab> :bn<CR>
       " cycle through buffers (right to left) with ctrl + l
       map <C-l> :bn<CR>
       " cycle through buffers (left to right) with ctrl + h

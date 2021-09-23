@@ -37,7 +37,9 @@ set autowriteall
 " disable all blinkin in gvim
 set guicursor+=a:blinkon0
 " do not wrap lines
-set nowrap
+if (Except_firenvim())
+  set nowrap
+endif
 " Disable automatic comment insertion
 au BufEnter * set fo-=c fo-=r fo-=o
 " autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
