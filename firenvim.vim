@@ -6,7 +6,8 @@ let g:firenvim_config = {
 \ }
 
 let fc = g:firenvim_config['localSettings']
-let fc['.*github.*/issues/new.*'] = { 'cmdline': 'neovim', 'content': 'text', 'priority': 0, 'takeover': 'always' }
+let fc['.*'] = { 'takeover': 'never' }
+let fc['https?://.*github.*/issues/new.*'] = { 'takeover': 'always', 'priority': 1 }
 "let fc['https?://.*messenger.*'] = { 'takeover': 'never', 'priority': 1 }
 "let fc['https?://.*facebook.*'] = { 'takeover': 'never', 'priority': 1 }
 "let fc['https?://.*youtube.*'] = { 'takeover': 'never', 'priority': 1 }
