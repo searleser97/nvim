@@ -1,3 +1,5 @@
+" case-insesitive when searching
+set ignorecase
 " adds syntax highlighting
 syntax on
 " sets colorscheme
