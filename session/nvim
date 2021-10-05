@@ -12,12 +12,12 @@ badd +1 settings.vim
 badd +26 init.vim
 badd +71 mappings.vim
 badd +10 firenvim.vim
-badd +39 plugins.vim
+badd +40 plugins.vim
 argglobal
 %argdel
-edit plugins.vim
+edit settings.vim
 argglobal
-balt settings.vim
+balt plugins.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -28,11 +28,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 40 - ((7 * winheight(0) + 10) / 21)
+let s:l = 14 - ((13 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 40
+keepjumps 14
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

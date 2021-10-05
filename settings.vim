@@ -10,8 +10,8 @@ colorscheme onedark
 "colorscheme OceanicNext
 " speeds up commands after <Esc> key. example shift+o
 set ttimeoutlen=100
-" adds relative row index
-set relativenumber
+" adds relative row index except for current line
+set number relativenumber
 " sets tab width
 set tabstop=2
 " sets the amount of spaces when pressing TAB
