@@ -36,9 +36,9 @@ function! FReplaceFactory(...)
   let word1 = a:1
   let word2 = a:2
 
-  if mode == 'v'
+  if mode ==# 'v'
     call ReplaceWordsInSingleLineSelection(word1, word2)
-  elseif mode == 'V' || mode == "\<C-V>" 
+  elseif mode ==# 'V' || mode == "\<C-V>" 
     call ReplaceWordsInMultiLineSelection(word1, word2)
   else
     call FReplaceWords(word1, word2)
