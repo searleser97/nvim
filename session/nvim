@@ -9,15 +9,22 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 settings.vim
-badd +26 init.vim
-badd +71 mappings.vim
-badd +10 firenvim.vim
-badd +40 plugins.vim
+badd +10 init.vim
+badd +37 test.vim
+badd +187 autoload/plugged/vim-sneak/autoload/sneak/label.vim
+badd +423 autoload/plugged/vim-sneak/plugin/sneak.vim
+badd +46 autoload/plugged/vim-sneak/autoload/sneak/util.vim
+badd +51 mappings.vim
+badd +40 ~/.config/nvim/plugins.vim
+badd +5 ~/.config/nvim/lua/plug-nvim-toggleterm.lua
+badd +26 ~/.config/nvim/coc-settings.json
+badd +2 ~/.config/nvim/coc-extensions.vim
+badd +0 ~/.config/nvim/coc.vim
 argglobal
 %argdel
-edit settings.vim
+edit ~/.config/nvim/coc.vim
 argglobal
-balt plugins.vim
+balt ~/.config/nvim/coc-extensions.vim
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -28,12 +35,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 10) / 21)
+let s:l = 199 - ((40 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 0
+keepjumps 199
+normal! 09|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

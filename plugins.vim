@@ -24,6 +24,8 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+Plug 'ChristianChiarulli/vscode-easymotion'
+
 Plug 'searleser97/cpbooster.vim', Cond(Except_firenvim())
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'

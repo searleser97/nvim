@@ -11,8 +11,8 @@ nnoremap <Bs> X
 " paste just yanked stuff not deleted stuff with 0
 noremap 0 "0p
 
-map <space>f <Plug>Sneak_s
-map <space>F <Plug>Sneak_S
+map H <Plug>Sneak_S
+map L <Plug>Sneak_s
 
 if Except_vscode()
       "replace exact words (case sensitive) in entire file or selection
