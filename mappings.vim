@@ -13,6 +13,13 @@ noremap 0 "0p
 
 map H <Plug>Sneak_S
 map L <Plug>Sneak_s
+" disable ; and , motions for vim-sneak
+map <f98> <Plug>Sneak_;
+map <f99> <Plug>Sneak_,
+
+"map L <Plug>(easymotion-w)
+"map H <Plug>(easymotion-b)
+
 
 if Except_vscode()
       "replace exact words (case sensitive) in entire file or selection

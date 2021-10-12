@@ -33,7 +33,9 @@ let s:target_hl_defaults = {
     \ }
 
 function! ExecTest()
-    call InitHL("hola", s:target_hl_defaults)
-    call VSCodeSetTextDecorations("hola", [['10', [ [6, 'jaja'] ] ] ])
+    let hh = "hola que chow"
+    execute "!echo " . hh
+    "call InitHL("hola", s:target_hl_defaults)
+    "call VSCodeSetTextDecorations("hola", [['10', [ [6, 'jaja'] ] ] ])
 endfunction
 

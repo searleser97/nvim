@@ -24,10 +24,11 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-Plug 'ChristianChiarulli/vscode-easymotion'
+"Plug 'ChristianChiarulli/vscode-easymotion', Cond(Just_vscode())
+"Plug 'easymotion/vim-easymotion', Cond(Except_vscode())
 
 Plug 'searleser97/cpbooster.vim', Cond(Except_firenvim())
-Plug 'justinmk/vim-sneak'
+Plug 'searleser97/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'adelarsq/vim-matchit'
 Plug 'haya14busa/is.vim'
