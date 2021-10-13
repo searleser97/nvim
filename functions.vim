@@ -48,7 +48,7 @@ endfunction
 function TurnOffCaps()
   let capsState = matchstr(system('xset -q'), '00: Caps Lock:\s\+\zs\(on\|off\)\ze')
   if capsState == 'on'
-    execute '!xdotool key Caps_Lock'
+    silent execute '!xdotool key Caps_Lock'
   endif
 endfunction
 
