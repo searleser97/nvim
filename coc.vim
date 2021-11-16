@@ -1,3 +1,4 @@
+let g:coc_filetype_map = {'tex': 'latex'}
 " TextEdit might fail if hidden is not set.
 set hidden
 

@@ -10,4 +10,5 @@ let g:coc_global_extensions = ['coc-prettier',
       \ 'coc-texlab',
       \ 'coc-yaml',
       \ 'coc-python',
+      \ 'coc-ltex',
       \ ]
