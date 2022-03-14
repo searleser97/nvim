@@ -22,9 +22,18 @@ cd fonts
 
 ### Install Nerd Fonts
 
+#### Arch Linux
+
 ```shell
 yay -S nerd-fonts-complete` and use one NERD font
 ```
+
+#### MacOS
+
+- Install fonts using `brew install -cask font-{font name}`
+- https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e
+- https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+
 ### Shared clipboard when using WSL on Windows
 
 We use [win32yank](https://github.com/equalsraf/win32yank) to share clipboard between neovim WSL and windows. It makes the `+` registry send the data to windows and viceversa automatically, just run the following commands inside your WSL and it will work magically.
