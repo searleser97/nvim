@@ -1,3 +1,7 @@
+### Install NodeJs before everything to avoid errors with coc.nvim
+
+- prefer `NVM` to install node
+
 ### Install neovim-nightly
 
 yay -S neovim-nightly-bin
