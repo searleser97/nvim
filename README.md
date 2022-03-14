@@ -12,7 +12,7 @@ yay -S neovim-nightly-bin
 yay -S ripgrep
 ```
 
-### Install PowerLine fonts
+### Install PowerLine fonts (works for Mac & Linux)
 
 ```shell
 git clone https://github.com/powerline/fonts.git --depth=1
