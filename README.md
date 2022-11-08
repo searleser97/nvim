@@ -60,3 +60,8 @@ ln -sf ~/.config/nvim ~/.vim
 ```
 
 the next thing is to update the runtime in `init.vim` but that is already written in that file
+
+### Finally
+
+Execute `:PlugInstall` to install all the plugins
+
