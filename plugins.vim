@@ -33,7 +33,7 @@ Plug 'unblevable/quick-scope'
 Plug 'adelarsq/vim-matchit'
 Plug 'haya14busa/is.vim'
 
-Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(1) }})
+Plug 'glacambre/firenvim', Cond(Just_firenvim(), {'do': { _ -> firenvim#install(0) }})
 
 Plug 'neoclide/coc.nvim', Cond(Just_nvim(), {'branch': 'release'})
 Plug 'mhinz/vim-startify', Cond(Just_nvim())

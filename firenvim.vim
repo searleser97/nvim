@@ -2,7 +2,9 @@ let g:firenvim_config = {
     \ 'globalSettings': {
         \ 'alt': 'all',
     \  },
-    \ 'localSettings': {}
+    \ 'localSettings': {
+        \ 'selector': 'textarea',
+    \ }
 \ }
 
 let fc = g:firenvim_config['localSettings']
